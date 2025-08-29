@@ -1,4 +1,12 @@
-## Hi there 👋
+## Hi, I'm Carlos Romanow, a back-end software developer.👋 
+<div>
+  - 🔭 Currently employed at Grupo Maringá - Production Planning and Control (PPC). <br>
+- 🌱 I’m currently developing my back-end skills, JavaScript, Python, SQL, and more... <br><br>
+
+<img width="200px" height="200" alt="pyhton_e_sql_icon-removebg-preview" src="https://github.com/user-attachments/assets/ec52cc50-f38b-454f-aff7-fae25b65d475" />
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/c10c55f0-a79e-4528-b822-a25e482767ab" />
+
+</div>
 
 <!--
 **CaduhRoman/caduhroman** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
