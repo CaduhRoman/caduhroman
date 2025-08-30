@@ -3,8 +3,10 @@
   - 🔭 Currently employed at Grupo Maringá - Production Planning and Control (PPC). <br>
 - 🌱 I’m currently developing my back-end skills, JavaScript, Python, SQL, and more... <br><br>
 
-<img width="200px" height="200" alt="pyhton_e_sql_icon-removebg-preview" src="https://github.com/user-attachments/assets/ec52cc50-f38b-454f-aff7-fae25b65d475" />
-<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/c10c55f0-a79e-4528-b822-a25e482767ab" />
+<img width="150" height="150" alt="pyhton_e_sql_icon-removebg-preview" src="https://github.com/user-attachments/assets/f328cc6b-b129-479d-882c-c32b01c79d74" />
+
+<img width="200" height="200" alt="HTML-CSS-javaScript-icon" src="https://github.com/user-attachments/assets/c10c55f0-a79e-4528-b822-a25e482767ab" />
+<img width="200" height="200" alt="node-js-" src="https://github.com/user-attachments/assets/f5fa77c2-fe36-4c88-8322-68ce1d39f1a9" />
 
 </div>
 
