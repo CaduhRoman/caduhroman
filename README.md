@@ -1,14 +1,23 @@
 ## Hi, I'm Carlos Romanow, a back-end software developer.👋 
-<div>
-  - 🔭 Currently employed at Grupo Maringá - Production Planning and Control (PPC). <br>
-- 🌱 I’m currently developing my back-end skills, JavaScript, Python, SQL, and more... <br><br>
 
-<img width="150" height="150" alt="pyhton_e_sql_icon-removebg-preview" src="https://github.com/user-attachments/assets/f328cc6b-b129-479d-882c-c32b01c79d74" />
+- 🔭 Currently employed at Grupo Maringá  
+- 🌱 I’m currently developing my back-end skills: Java, JavaScript, Python, SQL, Dart, Flutter, Node.js, and more...
 
-<img width="200" height="200" alt="HTML-CSS-javaScript-icon" src="https://github.com/user-attachments/assets/c10c55f0-a79e-4528-b822-a25e482767ab" />
-<img width="200" height="200" alt="node-js-" src="https://github.com/user-attachments/assets/f5fa77c2-fe36-4c88-8322-68ce1d39f1a9" />
+### Tech stack
 
-</div>
+<p align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="48" alt="Python"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" height="48" alt="Dart"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" height="48" alt="Flutter"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="48" alt="Node.js"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" height="48" alt="Oracle SQL"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="48" alt="Java"/>
+</p>
 
 <!--
 **CaduhRoman/caduhroman** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
