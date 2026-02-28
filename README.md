@@ -1,6 +1,6 @@
 ## Hi, I'm Carlos Romanow 👋
-- 💼 Working with Data Analysis & ETL at Grupo Maringá (Power BI, DAX, SQL, VBA)
-- 🎓 IT student at UFMS — passionate about back-end and data science
+- 💼 Currently employed at Grupo Maringá (TOTVs, Excel, Power BI, SQL)
+- 🎓 IT student at UFMS — passionate about back-end and data
 - 🌱 Currently leveling up: Python, SQL and Java
 
 ### Tech stack
