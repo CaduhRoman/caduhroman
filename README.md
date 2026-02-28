@@ -1,6 +1,5 @@
 ## Hi, I'm Carlos Romanow 👋
 - 💼 Currently employed at Grupo Maringá
-- 🛠️ Some of my daily work tools today are: Power BI, DAX, Pascal, Oracle SQL for ERP's DB
 - 🎓 IT student at UFMS — passionate about back-end and data science
 - 🌱 Currently leveling up: Python, SQL and Java
 
