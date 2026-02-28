@@ -2,7 +2,7 @@
 - 💼 Working with Data Analysis & ETL at Grupo Maringá (Power BI, DAX, SQL, VBA)
 - 🎓 IT student at UFMS — passionate about back-end and data science
 - 🌱 Currently leveling up: Python, SQL and Java
-- 
+
 ### Tech stack
 <p align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="48" width="50" alt="Python"/>
