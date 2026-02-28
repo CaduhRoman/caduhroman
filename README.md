@@ -1,8 +1,8 @@
-## Hi, I'm Carlos Romanow, a back-end software developer.👋 
-
-- 🔭 Currently employed at Grupo Maringá  
-- 🌱 I’m currently developing my back-end skills: Java, Python, SQL, and more...
-
+## Hi, I'm Carlos Romanow 👋
+- 💼 Working with Data Analysis & ETL at Grupo Maringá (Power BI, DAX, SQL, VBA)
+- 🎓 IT student at UFMS — passionate about back-end and data science
+- 🌱 Currently leveling up: Python, SQL and Java
+- 
 ### Tech stack
 <p align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="48" width="60" alt="Python"/>
