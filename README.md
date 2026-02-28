@@ -1,7 +1,7 @@
 ## Hi, I'm Carlos Romanow, a back-end software developer.👋 
 
 - 🔭 Currently employed at Grupo Maringá  
-- 🌱 I’m currently developing my back-end skills: Java, JavaScript, Python, SQL, Dart, Flutter, Node.js, and more...
+- 🌱 I’m currently developing my back-end skills: Java, Python, SQL, and more...
 
 ### Tech stack
 
