@@ -1,6 +1,6 @@
 ## Hi, I'm Carlos Romanow 👋
 - 💼 Currently employed at Grupo Maringá
-- 🎓 IT student at UFMS — passionate about back-end and data science
+- 🎓 IT student at UFMS - enthusiast about back-end and data science
 - 🌱 Currently leveling up: Python, SQL and Java
 
 ### Tech stack
