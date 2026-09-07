@@ -1,15 +1,20 @@
 ## Hi, I'm Carlos Romanow 👋
-- 💼 Currently employed at Grupo Maringá
-- 🎓 IT student at UFMS - enthusiast about back-end and data science
-- 🌱 Currently leveling up: Python, SQL and Java
+
+- 💼 Data professional with experience in analytics, reporting and process improvement
+- 🎓 IT student at UFMS
+- 📊 Interested in Data Analytics, Analytics Engineering and Data Science
+- 🌱 Currently improving my skills in Python, SQL and data modeling
 
 ### Tech stack
+
 <p align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="48" width="50" alt="Python"/>
   &nbsp;&nbsp;&nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" height="48" width="50" alt="Oracle SQL"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="48" width="50" alt="Java"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="48" width="50" alt="PostgreSQL"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="48" width="50" alt="Git"/>
 </p>
 <!--
 **CaduhRoman/caduhroman** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
