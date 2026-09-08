@@ -1,9 +1,9 @@
 ## Hi, I'm Carlos Romanow 👋
 
-- 💼 Data professional with experience in analytics, reporting and process improvement
+- 💼 Data Analyst focused on SQL, Python, Power BI and process automation
 - 🎓 IT student at UFMS
-- 📊 Interested in Data Analytics, Analytics Engineering and Data Science
-- 🌱 Currently improving my skills in Python, SQL and data modeling
+- 📊 Experience building production, energy and operational dashboards
+- 🌱 Currently developing projects in Data Analytics and Analytics Engineering
 
 ### Tech stack
 
