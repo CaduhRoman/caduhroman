@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Space Invaders · Carlos Romanow</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0d1117; color: #e6edf3; font-family: ui-monospace, "JetBrains Mono", Consolas, monospace; }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+  canvas { background: #010409; border: 2px solid #30363d; border-radius: 8px; max-width: 96vw; max-height: 76vh; image-rendering: pixelated; touch-action: none; }
+  p { margin: 0; color: #8b949e; font-size: 13px; text-align: center; }
+  a { color: #58a6ff; }
+  .pad { display: none; gap: 10px; }
+  .pad button { font: inherit; font-size: 20px; width: 64px; height: 52px; border-radius: 10px; border: 1px solid #30363d; background: #161b22; color: #e6edf3; }
+  @media (pointer: coarse) { .pad { display: flex; } .keys { display: none; } }
+</style>
+</head>
+<body>
+<canvas id="c" width="480" height="560"></canvas>
+<div class="pad">
+  <button data-k="left">◀</button><button data-k="fire">●</button><button data-k="right">▶</button>
+</div>
+<p class="keys">← → to move · Space to shoot · Enter to start / restart</p>
+<p><a href="https://github.com/CaduhRoman">← back to GitHub</a> · <a href="https://romanow.pages.dev">romanow.pages.dev</a></p>
+<script>
+const cv = document.getElementById("c"), g = cv.getContext("2d");
+const W = cv.width, H = cv.height;
+const C = { ship: "#3fb950", alien: ["#f778ba", "#a371f7", "#58a6ff"], shot: "#e6edf3", bomb: "#f85149", text: "#e6edf3" };
+
+// Sprites 11x8 em bitmap (1 = pixel aceso).
+const SPR = [
+  ["00100000100","00010001000","00111111100","01101110110","11111111111","10111111101","10100000101","00011011000"],
+  ["00100000100","10010001001","10111111101","11101110111","11111111111","01111111110","00100000100","01000000010"],
+];
+const SHIP = ["00000100000","00001110000","00001110000","01111111110","11111111111","11111111111"];
+function sprite(rows, x, y, s, color) {
+  g.fillStyle = color;
+  rows.forEach((r, j) => { for (let i = 0; i < r.length; i++) if (r[i] === "1") g.fillRect(x + i * s, y + j * s, s, s); });
+}
+
+const keys = {};
+let state, best = +localStorage.getItem("invaders-best") || 0;
+
+function reset(level = 1, score = 0, lives = 3) {
+  const aliens = [];
+  for (let r = 0; r < 5; r++) for (let c = 0; c < 9; c++) aliens.push({ x: 40 + c * 44, y: 70 + r * 36, row: r, alive: true });
+  state = { mode: state ? "play" : "title", level, score, lives, ship: { x: W / 2 - 16 }, shots: [], bombs: [], aliens,
+            dir: 1, step: 0, frame: 0, cooldown: 0, speed: Math.max(4, 26 - level * 4) };
+}
+
+function update() {
+  const s = state;
+  if (s.mode !== "play") return;
+  s.frame++;
+  if (keys.left) s.ship.x = Math.max(8, s.ship.x - 4);
+  if (keys.right) s.ship.x = Math.min(W - 41, s.ship.x + 4);
+  if (s.cooldown > 0) s.cooldown--;
+  if (keys.fire && s.cooldown === 0 && s.shots.length < 2) { s.shots.push({ x: s.ship.x + 16, y: H - 60 }); s.cooldown = 18; }
+
+  s.shots.forEach((b) => (b.y -= 8));
+  s.bombs.forEach((b) => (b.y += 3 + s.level * 0.5));
+
+  const alive = s.aliens.filter((a) => a.alive);
+  // Quanto menos aliens, mais rápido eles andam.
+  const every = Math.max(2, Math.round(s.speed * alive.length / 45));
+  if (s.frame % every === 0) {
+    const edge = alive.some((a) => (s.dir > 0 ? a.x + 33 >= W - 8 : a.x <= 8));
+    if (edge) { alive.forEach((a) => (a.y += 16)); s.dir *= -1; }
+    else alive.forEach((a) => (a.x += 6 * s.dir));
+    s.step ^= 1;
+  }
+  if (alive.length && Math.random() < 0.02 + s.level * 0.006) {
+    const a = alive[Math.floor(Math.random() * alive.length)];
+    s.bombs.push({ x: a.x + 16, y: a.y + 24 });
+  }
+
+  for (const b of s.shots) for (const a of alive) {
+    if (a.alive && b.x > a.x && b.x < a.x + 33 && b.y > a.y && b.y < a.y + 24) {
+      a.alive = false; b.y = -99; s.score += (5 - a.row) * 10;
+    }
+  }
+  for (const b of s.bombs) {
+    if (b.y > H - 56 && b.y < H - 30 && b.x > s.ship.x && b.x < s.ship.x + 33) { b.y = H + 99; hit(); }
+  }
+  s.shots = s.shots.filter((b) => b.y > 0);
+  s.bombs = s.bombs.filter((b) => b.y < H);
+
+  if (alive.some((a) => a.alive && a.y + 24 >= H - 60)) return gameOver();
+  if (!s.aliens.some((a) => a.alive)) reset(s.level + 1, s.score + 100, s.lives);
+}
+
+function hit() { if (--state.lives <= 0) gameOver(); else state.bombs = []; }
+function gameOver() {
+  state.mode = "over";
+  if (state.score > best) { best = state.score; localStorage.setItem("invaders-best", best); }
+}
+
+function draw() {
+  const s = state;
+  g.clearRect(0, 0, W, H);
+  g.fillStyle = C.text; g.font = "14px ui-monospace, Consolas, monospace"; g.textAlign = "left";
+  g.fillText(`SCORE ${s.score}`, 12, 24);
+  g.textAlign = "center"; g.fillText(`LEVEL ${s.level}`, W / 2, 24);
+  g.textAlign = "right"; g.fillText(`BEST ${best}`, W - 12, 24);
+  g.fillStyle = "#30363d"; g.fillRect(0, H - 24, W, 2);
+  for (let i = 0; i < s.lives; i++) sprite(SHIP, 12 + i * 30, H - 16, 2, C.ship);
+
+  s.aliens.forEach((a) => a.alive && sprite(SPR[s.step], a.x, a.y, 3, C.alien[Math.min(2, Math.floor(a.row / 2))]));
+  sprite(SHIP, s.ship.x, H - 50, 3, C.ship);
+  g.fillStyle = C.shot; s.shots.forEach((b) => g.fillRect(b.x - 1, b.y, 3, 10));
+  g.fillStyle = C.bomb; s.bombs.forEach((b) => g.fillRect(b.x - 1, b.y, 3, 8));
+
+  if (s.mode !== "play") {
+    g.fillStyle = "rgba(1,4,9,.75)"; g.fillRect(0, 0, W, H);
+    g.fillStyle = C.text; g.textAlign = "center";
+    g.font = "bold 30px ui-monospace, Consolas, monospace";
+    g.fillText(s.mode === "title" ? "SPACE INVADERS" : "GAME OVER", W / 2, H / 2 - 20);
+    g.font = "15px ui-monospace, Consolas, monospace";
+    g.fillText(s.mode === "title" ? "press Enter or tap to start" : `score ${s.score} · press Enter or tap`, W / 2, H / 2 + 16);
+  }
+}
+
+function start() { if (state.mode !== "play") { reset(); state.mode = "play"; } }
+
+const MAP = { ArrowLeft: "left", a: "left", ArrowRight: "right", d: "right", " ": "fire", ArrowUp: "fire" };
+addEventListener("keydown", (e) => {
+  if (e.key === "Enter") start();
+  if (MAP[e.key]) { keys[MAP[e.key]] = true; e.preventDefault(); if (MAP[e.key] === "fire") start(); }
+});
+addEventListener("keyup", (e) => MAP[e.key] && (keys[MAP[e.key]] = false));
+cv.addEventListener("pointerdown", start);
+document.querySelectorAll(".pad button").forEach((b) => {
+  const k = b.dataset.k;
+  b.addEventListener("pointerdown", (e) => { e.preventDefault(); keys[k] = true; start(); });
+  ["pointerup", "pointerleave", "pointercancel"].forEach((ev) => b.addEventListener(ev, () => (keys[k] = false)));
+});
+
+reset();
+(function loop() { update(); draw(); requestAnimationFrame(loop); })();
+</script>
+</body>
+</html>

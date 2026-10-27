@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="200" viewBox="0 0 800 200" role="img" aria-label="Space Invaders: click to play">
+  <style>
+    .fleet { animation: march 4s steps(8) infinite alternate; }
+    .shot { animation: fire 1.6s linear infinite; }
+    .ship { animation: glide 4s ease-in-out infinite alternate; }
+    .blink { animation: blink 1.2s steps(1) infinite; }
+    @keyframes march { from { transform: translateX(0); } to { transform: translateX(160px); } }
+    @keyframes glide { from { transform: translateX(280px); } to { transform: translateX(440px); } }
+    @keyframes fire { from { transform: translateY(0); opacity: 1; } 85% { opacity: 1; } to { transform: translateY(-130px); opacity: 0; } }
+    @keyframes blink { 50% { opacity: 0; } }
+    text { font-family: ui-monospace, Consolas, monospace; }
+  </style>
+  <defs>
+    <!-- Alien 11x8, pixel de 3px -->
+    <g id="a">
+      <path d="M6 0h3v3H6zM24 0h3v3h-3zM9 3h3v3H9zM21 3h3v3h-3zM6 6h21v3H6zM3 9h6v3H3zM12 9h9v3h-9zM24 9h6v3h-6zM0 12h33v3H0zM0 15h3v6H0zM6 15h21v3H6zM30 15h3v6h-3zM6 18h3v3H6zM24 18h3v3h-3zM9 21h6v3H9zM18 21h6v3h-6z"/>
+    </g>
+  </defs>
+  <rect width="800" height="200" rx="12" fill="#010409"/>
+  <g class="fleet">
+    <g fill="#f778ba"><use xlink:href="#a" x="150" y="24"/><use xlink:href="#a" x="200" y="24"/><use xlink:href="#a" x="250" y="24"/><use xlink:href="#a" x="300" y="24"/><use xlink:href="#a" x="350" y="24"/><use xlink:href="#a" x="400" y="24"/><use xlink:href="#a" x="450" y="24"/></g>
+    <g fill="#a371f7"><use xlink:href="#a" x="150" y="60"/><use xlink:href="#a" x="200" y="60"/><use xlink:href="#a" x="250" y="60"/><use xlink:href="#a" x="300" y="60"/><use xlink:href="#a" x="350" y="60"/><use xlink:href="#a" x="400" y="60"/><use xlink:href="#a" x="450" y="60"/></g>
+    <g fill="#58a6ff"><use xlink:href="#a" x="150" y="96"/><use xlink:href="#a" x="200" y="96"/><use xlink:href="#a" x="250" y="96"/><use xlink:href="#a" x="300" y="96"/><use xlink:href="#a" x="350" y="96"/><use xlink:href="#a" x="400" y="96"/><use xlink:href="#a" x="450" y="96"/></g>
+  </g>
+  <g class="ship" fill="#3fb950">
+    <path d="M15 150h3v3h-3zM12 153h9v6h-9zM3 159h27v3H3zM0 162h33v6H0z"/>
+    <rect class="shot" x="15" y="140" width="3" height="10" fill="#e6edf3"/>
+  </g>
+  <text x="400" y="190" text-anchor="middle" font-size="14" fill="#e6edf3" class="blink">▶ CLICK TO PLAY</text>
+</svg>
