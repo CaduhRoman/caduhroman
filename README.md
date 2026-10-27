@@ -40,7 +40,7 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="40" alt="Git"/>
 </p>
 
-**AI:** Claude Code · Codex · Copilot · LLM APIs (Groq) · agents & tool use
+**AI:** Claude Code · Codex · Hermes · Grok bots · LLM APIs · agents & tool use
 
 ### Take a break 👾
 
